@@ -23,18 +23,18 @@
     "test": "node test/app"
   },
   "dependencies": {
-    "clone": "^1.0.2",
-    "json-server": "^0.8.4"
+    "clone": "^2.1.2",
+    "json-server": "^0.17.0"
   },
   "devDependencies": {
-    "Faker": "~0.5.11",
-    "rosie": "~1.6.0",
-    "supertest": "^1.2.0",
-    "tape": "^4.5.1",
-    "underscore": ">=1.12.1"
+    "faker": "^5.5.3",
+    "rosie": "^2.0.1",
+    "supertest": "^6.1.6",
+    "tape": "^5.3.2",
+    "underscore": "^1.13.1"
   },
   "engines": {
-    "node": "7.x"
+    "node": ">=20.0.0"
   },
   "license": "MIT"
 }
