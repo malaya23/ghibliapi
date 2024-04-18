@@ -19,10 +19,7 @@ jobs:
       - name: Set up Node.js version
         uses: actions/setup-node@v3
         with:
-          node-version: '20.0'
-          
-      - name: Clear Node.js cache
-        run: npm cache clean --force
+          node-version: '18.x'
 
       - name: npm install, build, and test
         run: |
@@ -43,7 +40,7 @@ jobs:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     permissions:
-      id-token: write # This is required for requesting the JWT
+      id-token: write #This is required for requesting the JWT
 
     steps:
       - name: Download artifact from build job
@@ -54,9 +51,9 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v1
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_431C2CE755EB49FAB5C8C18E52AA1D51 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_9506546F6F3540058E0FC16F0C0DE87A }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_AF1EFD1225A348A4B8523B4C20F1C67F }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_1F5F7EF79DF940CDABAE5EAE2501349B }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_2FFA9F7CFE6F4A23911389D8B0606F79 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_F96EB8CCE9344C75BADA834B60BCE2E4 }}
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
@@ -65,3 +62,4 @@ jobs:
           app-name: 'CC1-StudioGhibli'
           slot-name: 'Production'
           package: .
+          
