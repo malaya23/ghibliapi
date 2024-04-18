@@ -20,7 +20,12 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '20.x'
-
+          
+      - name: Clear Node.js cache
+        run: npm cache clean --force
+        
+          npm install
+      
       - name: npm install, build, and test
         run: |
           npm install
