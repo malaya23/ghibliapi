@@ -23,9 +23,7 @@ jobs:
           
       - name: Clear Node.js cache
         run: npm cache clean --force
-        
-          npm install
-      
+
       - name: npm install, build, and test
         run: |
           npm install
@@ -45,7 +43,7 @@ jobs:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     permissions:
-      id-token: write #This is required for requesting the JWT
+      id-token: write # This is required for requesting the JWT
 
     steps:
       - name: Download artifact from build job
@@ -67,4 +65,3 @@ jobs:
           app-name: 'CC1-StudioGhibli'
           slot-name: 'Production'
           package: .
-          
